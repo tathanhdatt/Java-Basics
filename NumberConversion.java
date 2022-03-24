@@ -9,6 +9,7 @@ public class NumberConversion {
     int inRadix = scanner.nextInt();
     System.out.print("Enter the output radix: ");
     int outRadix = scanner.nextInt();
+    scanner.close();
 
     System.out.printf(
             "\"%s\" in radix %d is \"%s\" in radix %d",

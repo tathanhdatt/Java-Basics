@@ -1,6 +1,6 @@
 public class BinarySearch {
   public static void main(String[] args) {
-    int[] array = {11, 14, 16, 18, 20, 25, 28, 30, 34, 40, 45};
+    int[] array = {11, 12, 13};
     System.out.println(binarySearch(array, 13));
   }
 
@@ -14,7 +14,7 @@ public class BinarySearch {
       } else if (key < array[middleIdx]) {
         toIdx = middleIdx;
       } else {
-        fromIdx = middleIdx - 1;
+        fromIdx = middleIdx + 1;
       }
       return binarySearch(array, key, fromIdx, toIdx);
     }

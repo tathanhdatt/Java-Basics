@@ -48,10 +48,9 @@ public class BubbleSort {
     StringBuilder str = new StringBuilder();
     str.append("[");
     for (int element : array) {
-      if (element == array[array.length - 1]) {
-        str.append(element);
-      } else {
-        str.append(element).append(", ");
+      str.append(element);
+      if (element != array[array.length - 1]) {
+        str.append(", ");
       }
     }
     str.append("]");

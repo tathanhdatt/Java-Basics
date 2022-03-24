@@ -31,8 +31,10 @@ public class InsertionSort {
     int flag = 1;
     while (flag < array.length){
       int element = array[flag];
+      // find position on the left for element
       for (int i = 0; i < flag; i++) {
         if (element < array[i]) {
+          // push elements on the left of flag up 1 position
           for (int j = flag; j > i; j--) {
             array[j] = array[j - 1];
           }

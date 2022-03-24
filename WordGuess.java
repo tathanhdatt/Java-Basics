@@ -61,7 +61,7 @@ public class WordGuess {
       word = word.replaceAll("([^a-zA-Z_0-9]+$)|(^[^a-zA-Z_0-9]+)", "");
       scanner.close();
       return word;
-    }catch (IOException e) {
+    } catch (IOException e) {
       e.printStackTrace();
       return "";
     }

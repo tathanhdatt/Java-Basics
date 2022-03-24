@@ -26,20 +26,20 @@ public class DateUtil {
     if (9999 < year || year < 0 || 12 < month || month < 1) {
       return false;
     }
-    if (day < 0) {
+    if (day <= 0) {
       return false;
     } else {
       switch (month) {
         case 1, 3, 5, 7, 8, 10, 12:
-          return !(day > 31);
+          return day <= 31;
         case 2:
           if (isLeapYear(year)) {
-            return !(day > 29);
+            return day <= 29;
           } else {
-            return !(day > 28);
+            return day <= 28;
           }
         default:
-          return !(day > 30);
+          return day <= 30;
       }
     }
   }

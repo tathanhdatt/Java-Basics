@@ -185,12 +185,9 @@ public class Matrices {
     int rows = matrix1.length;
     int cols = matrix2[0].length;
     int[][] mulMatrix = new int[rows][cols];
-    int rowIdx = 0;
 
-    while (rowIdx < rows) {
-      int colIdx = 0;
-
-      while (colIdx < cols) {
+    for (int rowIdx = 0; rowIdx < rows; rowIdx++) {
+      for (int colIdx = 0; colIdx < cols; colIdx++) {
         int element = 0;
         int numColMatrix1 = matrix1[0].length;
 
@@ -199,9 +196,7 @@ public class Matrices {
         }
 
         mulMatrix[rowIdx][colIdx] = element;
-        colIdx++;
       }
-      rowIdx++;
     }
     return mulMatrix;
   }
@@ -217,12 +212,9 @@ public class Matrices {
     int rows = matrix1.length;
     int cols = matrix2[0].length;
     double[][] mulMatrix = new double[rows][cols];
-    int rowIdx = 0;
 
-    while (rowIdx < rows) {
-      int colIdx = 0;
-
-      while (colIdx < cols) {
+    for (int rowIdx = 0;rowIdx < rows; rowIdx++) {
+      for (int colIdx = 0 ;colIdx < cols; colIdx++) {
         double element = 0;
         int numColMatrix1 = matrix1[0].length;
 
@@ -231,9 +223,7 @@ public class Matrices {
         }
 
         mulMatrix[rowIdx][colIdx] = element;
-        colIdx++;
       }
-      rowIdx++;
     }
     return mulMatrix;
   }

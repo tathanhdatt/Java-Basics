@@ -5,7 +5,7 @@ public class BinarySearch {
   }
 
   public static boolean binarySearch(int[] array, int key, int fromIdx, int toIdx) {
-    if (fromIdx == toIdx - 1) {
+    if (fromIdx == toIdx) {
       return key == array[fromIdx];
     } else {
       int middleIdx = (fromIdx + toIdx) / 2;

@@ -30,7 +30,7 @@ public class SelectionSort {
   public static void selectionSort(int[] array) {
     int flag = 0;
     do {
-      // find index of min element from flag to end array
+      // find index of min element on the right of flag
       int termIdx = flag;
       for (int i = flag; i < array.length; i++) {
         if (array[termIdx] > array[i]) {

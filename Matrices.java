@@ -4,41 +4,11 @@ public class Matrices {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
 
-    // input matrix 1
     System.out.println("-> Matrix 1");
-    System.out.print("Enter the number of rows: ");
-    int rows1 = scanner.nextInt();
-    System.out.print("Enter the number of columns: ");
-    int cols1 = scanner.nextInt();
-    int[][] matrix1 = new int[rows1][cols1];
+    int[][] matrix1 = readMatrixInt(scanner);
 
-    for (int row = 0; row < rows1; row++) {
-      System.out.print(
-              "Enter " + cols1 + " elements of row " +
-              (row + 1) + " (separated by space): "
-      );
-      for (int col = 0; col < cols1; col++) {
-        matrix1[row][col] = scanner.nextInt();
-      }
-    }
-
-    // input matrix 2
     System.out.println("-> Matrix 2");
-    System.out.print("Enter the number of rows: ");
-    int rows2 = scanner.nextInt();
-    System.out.print("Enter the number of columns: ");
-    int cols2 = scanner.nextInt();
-    int[][] matrix2 = new int[rows2][cols2];
-
-    for (int row = 0; row < rows2; row++) {
-      System.out.print(
-              "Enter " + cols2 + " elements of row " +
-              (row + 1) + " (separated by space): "
-      );
-      for (int col = 0; col < cols2; col++) {
-        matrix2[row][col] = scanner.nextInt();
-      }
-    }
+    int[][] matrix2 = readMatrixInt(scanner);
     scanner.close();
 
     //print 2 matrices
@@ -57,20 +27,61 @@ public class Matrices {
     System.out.println("Multiplication of 2 matrices");
     print(multiply(matrix1, matrix2));
   }
+
+  public static int[][] readMatrixInt(Scanner scanner) {
+    System.out.print("Enter the number of rows: ");
+    int rows = scanner.nextInt();
+    System.out.print("Enter the number of columns: ");
+    int cols = scanner.nextInt();
+
+    int[][] matrix = new int[rows][cols];
+
+    for (int row = 0; row < rows; row++) {
+      System.out.print(
+        "Enter " + cols + " elements of row " +
+          (row + 1) + " (separated by space): "
+      );
+      for (int col = 0; col < cols; col++) {
+        matrix[row][col] = scanner.nextInt();
+      }
+    }
+
+    return matrix;
+  }
+
+  public static double[][] readMatrixDouble(Scanner scanner) {
+    System.out.print("Enter the number of rows: ");
+    int rows = scanner.nextInt();
+    System.out.print("Enter the number of columns: ");
+    int cols = scanner.nextInt();
+
+    double[][] matrix = new double[rows][cols];
+
+    for (int row = 0; row < rows; row++) {
+      System.out.print(
+        "Enter " + cols + " elements of row " +
+          (row + 1) + " (separated by space): "
+      );
+      for (int col = 0; col < cols; col++) {
+        matrix[row][col] = scanner.nextDouble();
+      }
+    }
+
+    return matrix;
+  }
+
   public static void print(int[][] matrix) {
     if (matrix == null) {
       return;
     }
-    int rows = matrix.length;
-    int cols = matrix[0].length;
 
-    for (int row = 0; row < rows; row++) {
+    for (int[] row : matrix) {
       System.out.print("[");
-      for (int col = 0; col < cols; col++) {
-        if (col != cols - 1){
-          System.out.print(matrix[row][col] + ", ");
+      for (int idx = 0; idx < row.length; idx++) {
+        if (idx != row.length - 1) {
+          System.out.print(row[idx] + ", ");
         } else {
-          System.out.print(matrix[row][col]);
+          System.out.print(row[idx]);
         }
       }
       System.out.println("]");
@@ -78,24 +89,29 @@ public class Matrices {
   }
 
   public static void print(double[][] matrix) {
-    int rows = matrix.length;
-    int cols = matrix[0].length;
+    if (matrix == null) {
+      return;
+    }
 
-    for (int row = 0; row < rows; row++) {
-      System.out.print("[ ");
-      for (int col = 0; col < cols; col++) {
-        System.out.print(matrix[row][col] + ", ");
+    for (double[] row : matrix) {
+      System.out.print("[");
+      for (int idx = 0; idx < row.length; idx++) {
+        if (idx != row.length - 1) {
+          System.out.print(row[idx] + ", ");
+        } else {
+          System.out.print(row[idx]);
+        }
       }
       System.out.println("]");
     }
   }
 
   public static boolean haveSameDimension(int[][] matrix1, int[][] matrix2) {
-    return matrix1.length != matrix2.length || matrix1[0].length != matrix2[0].length;
+    return matrix1.length == matrix2.length && matrix1[0].length == matrix2[0].length;
   }
 
   public static boolean haveSameDimension(double[][] matrix1, double[][] matrix2) {
-    return matrix1.length != matrix2.length || matrix1[0].length != matrix2[0].length;
+    return matrix1.length == matrix2.length && matrix1[0].length == matrix2[0].length;
   }
 
   public static int[][] add(int[][] matrix1, int[][] matrix2) {

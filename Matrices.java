@@ -229,8 +229,8 @@ public class Matrices {
     int cols = matrix2[0].length;
     double[][] mulMatrix = new double[rows][cols];
 
-    for (int rowIdx = 0;rowIdx < rows; rowIdx++) {
-      for (int colIdx = 0 ;colIdx < cols; colIdx++) {
+    for (int rowIdx = 0; rowIdx < rows; rowIdx++) {
+      for (int colIdx = 0 ; colIdx < cols; colIdx++) {
         double element = 0;
         int numColMatrix1 = matrix1[0].length;
 

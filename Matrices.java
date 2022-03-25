@@ -99,7 +99,7 @@ public class Matrices {
   }
 
   public static int[][] add(int[][] matrix1, int[][] matrix2) {
-    if (haveSameDimension(matrix1, matrix2)) {
+    if (!haveSameDimension(matrix1, matrix2)) {
       System.out.println("2 matrices don't have the same dimension");
       return null;
     }
@@ -118,7 +118,7 @@ public class Matrices {
   }
 
   public static double[][] add(double[][] matrix1, double[][] matrix2) {
-    if (haveSameDimension(matrix1, matrix2)) {
+    if (!haveSameDimension(matrix1, matrix2)) {
       System.out.println("2 matrices don't have the same dimension");
       return null;
     }
@@ -137,7 +137,7 @@ public class Matrices {
   }
 
   public static int[][] sub(int[][] matrix1, int[][] matrix2) {
-    if (haveSameDimension(matrix1, matrix2)) {
+    if (!haveSameDimension(matrix1, matrix2)) {
       System.out.println("2 matrices don't have the same dimension");
       return null;
     }
@@ -156,7 +156,7 @@ public class Matrices {
   }
 
   public static double[][] sub(double[][] matrix1, double[][] matrix2) {
-    if (haveSameDimension(matrix1, matrix2)) {
+    if (!haveSameDimension(matrix1, matrix2)) {
       System.out.println("2 matrices don't have the same dimension");
       return null;
     }

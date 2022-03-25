@@ -105,7 +105,7 @@ public class Matrices {
     }
 
     int rows = matrix1.length;
-    int cols = matrix1.length;
+    int cols = matrix1[0].length;
     int[][] sumMatrix = new int[rows][cols];
 
     for (int row = 0; row < rows; row++) {
@@ -124,7 +124,7 @@ public class Matrices {
     }
 
     int rows = matrix1.length;
-    int cols = matrix1.length;
+    int cols = matrix1[0].length;
     double[][] sumMatrix = new double[rows][cols];
 
     for (int row = 0; row < rows; row++) {
@@ -143,7 +143,7 @@ public class Matrices {
     }
 
     int rows = matrix1.length;
-    int cols = matrix1.length;
+    int cols = matrix1[0].length;
     int[][] subMatrix = new int[rows][cols];
 
     for (int row = 0; row < rows; row++) {
@@ -162,7 +162,7 @@ public class Matrices {
     }
 
     int rows = matrix1.length;
-    int cols = matrix1.length;
+    int cols = matrix1[0].length;
     double[][] subMatrix = new double[rows][cols];
 
     for (int row = 0; row < rows; row++) {

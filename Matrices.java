@@ -55,7 +55,7 @@ public class Matrices {
     print(sub(matrix1, matrix2));
 
     System.out.println("Multiplication of 2 matrices");
-    print(multiplication(matrix1, matrix2));
+    print(multiply(matrix1, matrix2));
   }
   public static void print(int[][] matrix) {
     if (matrix == null) {
@@ -174,7 +174,7 @@ public class Matrices {
     return subMatrix;
   }
 
-  public static int[][] multiplication(int[][] matrix1, int[][] matrix2) {
+  public static int[][] multiply(int[][] matrix1, int[][] matrix2) {
     if (matrix1[0].length != matrix2.length) {
       System.out.println(
         "the number of columns matrix 1 and the number of rows matrix 2 don't same"
@@ -201,7 +201,7 @@ public class Matrices {
     return mulMatrix;
   }
 
-  public static double[][] multiplication(double[][] matrix1, double[][] matrix2) {
+  public static double[][] multiply(double[][] matrix1, double[][] matrix2) {
     if (matrix1[0].length != matrix2.length) {
       System.out.println(
         "the number of columns matrix 1 and the number of rows matrix 2 don't same"

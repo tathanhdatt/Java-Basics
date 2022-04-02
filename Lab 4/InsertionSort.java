@@ -34,7 +34,7 @@ public class InsertionSort {
       // find position on the left for element
       for (int i = 0; i < flag; i++) {
         if (element < array[i]) {
-          // push elements on the left of flag up 1 position
+          // move elements on the left of flag up 1 position
           for (int j = flag; j > i; j--) {
             array[j] = array[j - 1];
           }
